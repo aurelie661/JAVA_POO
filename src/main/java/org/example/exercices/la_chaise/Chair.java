@@ -20,6 +20,9 @@ public class Chair {
         this.price = price;
     }
 
+    public Chair() {
+    }
+
     @Override
     public String toString() {
         return "Chair :" +
