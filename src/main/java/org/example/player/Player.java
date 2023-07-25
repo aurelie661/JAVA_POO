@@ -50,12 +50,14 @@ public class Player {
     }
 
     public void increasesLevel(){
-        if(xp > 100){
-            this.setLevel(level+=1);
-            xp-=100;
+        if(this.xp > 100){
+            this.level+=1;
+            this.xp-=100;
+            System.out.printf("Le joueur %s passe au niveau : %d \n",this.name,this.level);
         } else if (xp == 100) {
-            this.setLevel(level+=1);
-            xp = 0;
+            this.level+=1;
+            this.xp = 0;
+            System.out.printf("Le joueur %s passe au niveau : %d \n",this.name,this.level);
         }
     }
 
@@ -68,13 +70,4 @@ public class Player {
                 '.';
     }
 
-    public void postQuest(){
-        for (int i = 1; i < 4; i++) {
-            for (int j = 1; j < 11; j++) {
-                System.out.printf("Le joueur %s effectue la quête n°%d \n",this.name,j);
-            }
-            this.increasesLevel();
-            System.out.printf("Le joueur %s passe au niveau : %d \n",this.name,i);
-        }
-    }
 }
