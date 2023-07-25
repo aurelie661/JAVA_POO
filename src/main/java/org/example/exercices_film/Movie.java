@@ -1,5 +1,7 @@
 package org.example.exercices_film;
 
+import java.time.LocalDate;
+
 public class Movie {
     /*1. Créer une classe "Film"
       2. Ajouter les attributs suivants : titre, réalisateur, année de sortie et genre
@@ -8,10 +10,10 @@ public class Movie {
 
     private String title;
     private String director;
-    private int yearOfRelease;
+    private LocalDate yearOfRelease;
     private String gender;
 
-    public Movie(String title, String director, int yearOfRelease, String gender) {
+    public Movie(String title, String director, LocalDate yearOfRelease, String gender) {
         this.title = title;
         this.director = director;
         this.yearOfRelease = yearOfRelease;
@@ -34,11 +36,11 @@ public class Movie {
         this.director = director;
     }
 
-    public int getYearOfRelease() {
+    public LocalDate getYearOfRelease() {
         return yearOfRelease;
     }
 
-    public void setYearOfRelease(int yearOfRelease) {
+    public void setYearOfRelease(LocalDate yearOfRelease) {
         this.yearOfRelease = yearOfRelease;
     }
 
