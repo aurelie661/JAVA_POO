@@ -24,8 +24,8 @@ public class Chair {
     public String toString() {
         return "Chair :" +
                 "Je suis une chaise avec " + footCount +
-                " pied(s), en " + materials + '\'' +
-                " de couleur " + color + '\'' +
-                " à un prix de "+ price;
+                " pied(s), en " + materials+
+                " de couleur " + color+
+                " à un prix de "+ price+" €";
     }
 }
