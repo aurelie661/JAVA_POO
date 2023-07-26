@@ -33,10 +33,10 @@ public class Main {
         System.out.println("##################################");*/
 
 
-        waterTank1.toFill(5);
+        waterTank1.toFill(35);
         System.out.println(waterTank1.getFillLevel());
         System.out.println(WaterTank.totalCapacity);
-        System.out.println("##################################");
+        /*System.out.println("##################################");
         waterTank2.empty(10);
         System.out.println(waterTank2.getFillLevel());
         System.out.println(WaterTank.totalCapacity);
@@ -48,7 +48,7 @@ public class Main {
         System.out.println(WaterTank.totalCapacity);
         System.out.println("##################################");
         System.out.println("Poid total watertank 1 : "+waterTank1.totalWeight());
-        System.out.println("Poid total watertank 2 : "+waterTank2.totalWeight());
+        System.out.println("Poid total watertank 2 : "+waterTank2.totalWeight());*/
 
     }
 }

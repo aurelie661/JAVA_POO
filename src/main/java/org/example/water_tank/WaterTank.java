@@ -32,11 +32,11 @@ public class WaterTank {
             this.fillLevel += volume;
             WaterTank.totalCapacity += volume;
 
-        } /*else {
-            surplus = (volume + this.fillLevel) - this.maximumCapacity;
+        } else {
+            double surplus = this.maximumCapacity - (volume + this.fillLevel);
             this.fillLevel += (volume - surplus);
             WaterTank.totalCapacity += (this.fillLevel - surplus);
-        }*/
+        }
     }
 
     public void empty(double volume){
