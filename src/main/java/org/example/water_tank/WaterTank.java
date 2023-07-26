@@ -42,7 +42,7 @@ public class WaterTank {
     public void empty(double volume){
         if(this.fillLevel >= volume){
             this.fillLevel -= volume;
-            WaterTank.totalCapacity -= fillLevel;
+            WaterTank.totalCapacity -= volume;
         }/*else{
             double surplus = this.fillLevel - volume;
             this.fillLevel -= volume - surplus;
