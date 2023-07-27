@@ -47,11 +47,11 @@ public class Livre {
 
     @Override
     public String toString() {
-        return "Livre : " +
+        return "le livre : " +
                 "titre = '" + title + '\'' +
                 ", auteur = '" + author + '\'' +
-                ", nbPages = " + nbPage +
-                ", estEmprunte = " + isBorrow +
+                ", nombres de Pages = " + nbPage +
+                ", est Emprunté = " + isBorrow +
                 '.';
     }
 

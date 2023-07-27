@@ -1,12 +1,13 @@
 package org.example.exercices_bibliotheque;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Bibliotheque {
 
         private ArrayList<Livre> livres;
 
 
-    public Biblio() {
+        public Bibliotheque() {
             livres = new ArrayList<>();
         }
 
@@ -27,20 +28,22 @@ public class Bibliotheque {
 
         public void empruntLivre(Livre livre){
             // if(livre.isEstEmprunte() == false){
-            if(!livre.isEstEmprunte()){
+            if(!livre.isBorrow()){
                 livre.changeStatus();
             }
         }
 
         public void rendreLivre(Livre livre){
-            if(livre.isEstEmprunte()){
+            if(livre.isBorrow()){
                 livre.changeStatus();
             }
         }
 
 
-
-    }
+        public Iterator<Livre> iterator() {
+            return livres.iterator();
+        }
+}
 
 
 
