@@ -4,12 +4,13 @@ public class Livre {
     private String title;
     private String author;
     private int nbPage;
-    private boolean isBorrow = false;
+    private boolean isBorrow;
 
     public Livre(String title, String author, int nbPage) {
         this.title = title;
         this.author = author;
         this.nbPage = nbPage;
+        this.isBorrow = false;
     }
 
     public String getTitle() {
@@ -40,34 +41,30 @@ public class Livre {
         return isBorrow;
     }
 
-    public void setBorrow(boolean borrow) {
+    public void setIsBorrow(boolean borrow) {
         isBorrow = borrow;
     }
 
    public void statementOfBorrowing(Livre livre){
-        if(livre.isBorrow == true){
-            livre.setBorrow(false);
-        }else {
-            livre.setBorrow(true);
-        }
+        this.isBorrow = !this.isBorrow;
    }
     public void borrowBook(Livre livre){
         if(!livre.isBorrow){
-            livre.setBorrow(true);
+            livre.setIsBorrow(true);
             System.out.printf("Le livre %s à été emprunté.",livre.getTitle());
         }
     }
 
     public void returnBook(Livre livre){
         if(livre.isBorrow){
-            livre.setBorrow(false);
+            livre.setIsBorrow(false);
             System.out.printf("Le livre %s est disponible.",livre.getTitle());
         }
     }
     public String showDetails() {
         return "Livre :" +
                 "title= '" + title + '\'' +
-                ", autor= '" + author + '\'' +
+                ", author= '" + author + '\'' +
                 ", nbPage= " + nbPage +
                 ", isBorrow= " + isBorrow +
                 '.';

@@ -30,8 +30,8 @@ public class Bibliotheque {
         livres.get(0).returnBook(livres.get(0));
         System.out.println(livres.get(0).isBorrow());
 
-        livres.get(0).showDetails();
 
+        System.out.println(livres.get(0).showDetails());
 
 
     }
