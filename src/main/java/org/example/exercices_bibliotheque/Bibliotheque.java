@@ -1,40 +1,48 @@
 package org.example.exercices_bibliotheque;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Bibliotheque {
-    public static void main(String[] args) {
-        List<Livre> livres;
-        List<Bibliotheque> bibliotheques;
 
-        livres = new ArrayList<Livre>();
-        livres.add(new Livre("Seul sur Mars","Andy Weir",369));
-        livres.add(new Livre("Pinocchio","Carlos Lorenzini",369));
-        livres.add(new Livre("interstellar","Christopher Nolan",369));
-        livres.add(new Livre("Chair de poule","Robert Lawrence Stine",369));
+        private ArrayList<Livre> livres;
 
-        bibliotheques = new ArrayList<Bibliotheque>();
 
-        for (Livre livre: livres) {
-            System.out.println(livre.getTitle());
+    public Biblio() {
+            livres = new ArrayList<>();
         }
 
-        livres.remove(1);
 
-        for (Livre livre: livres) {
-            System.out.println(livre.getTitle());
+        public void addLivre(Livre livre){
+            livres.add(livre);
         }
 
-        livres.get(0).borrowBook(livres.get(0));
-        System.out.println(livres.get(0).isBorrow());
-        livres.get(0).returnBook(livres.get(0));
-        System.out.println(livres.get(0).isBorrow());
+        public void removeLivre(Livre livre){
+            livres.remove(livre);
+        }
 
+        public void afficheAll(){
+            for (Livre l : livres){
+                System.out.println(l.toString());
+            }
+        }
 
-        System.out.println(livres.get(0).showDetails());
+        public void empruntLivre(Livre livre){
+            // if(livre.isEstEmprunte() == false){
+            if(!livre.isEstEmprunte()){
+                livre.changeStatus();
+            }
+        }
+
+        public void rendreLivre(Livre livre){
+            if(livre.isEstEmprunte()){
+                livre.changeStatus();
+            }
+        }
+
 
 
     }
 
 
-}
+
+
+

@@ -41,32 +41,21 @@ public class Livre {
         return isBorrow;
     }
 
-    public void setIsBorrow(boolean borrow) {
-        isBorrow = borrow;
+    public void setIsBorrow(boolean isBorrow) {
+        this.isBorrow = isBorrow;
     }
 
-   public void statementOfBorrowing(Livre livre){
-        this.isBorrow = !this.isBorrow;
-   }
-    public void borrowBook(Livre livre){
-        if(!livre.isBorrow){
-            livre.setIsBorrow(true);
-            System.out.printf("Le livre %s à été emprunté.",livre.getTitle());
-        }
-    }
-
-    public void returnBook(Livre livre){
-        if(livre.isBorrow){
-            livre.setIsBorrow(false);
-            System.out.printf("Le livre %s est disponible.",livre.getTitle());
-        }
-    }
-    public String showDetails() {
-        return "Livre :" +
-                "title= '" + title + '\'' +
-                ", author= '" + author + '\'' +
-                ", nbPage= " + nbPage +
-                ", isBorrow= " + isBorrow +
+    @Override
+    public String toString() {
+        return "Livre : " +
+                "titre = '" + title + '\'' +
+                ", auteur = '" + author + '\'' +
+                ", nbPages = " + nbPage +
+                ", estEmprunte = " + isBorrow +
                 '.';
+    }
+
+    public void changeStatus(){
+        this.isBorrow = !this.isBorrow;
     }
 }
