@@ -1,4 +1,4 @@
-package org.example.player;
+package org.example.exercices_player;
 
 public class Main {
     public static void main(String[] args) {

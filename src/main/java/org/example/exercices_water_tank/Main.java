@@ -1,4 +1,4 @@
-package org.example.water_tank;
+package org.example.exercices_water_tank;
 
 public class Main {
     public static void main(String[] args) {

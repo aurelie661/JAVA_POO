@@ -1,4 +1,4 @@
-package org.example.player;
+package org.example.exercices_player;
 
 public class Player {
     /*1. Créer une classe Joueur
