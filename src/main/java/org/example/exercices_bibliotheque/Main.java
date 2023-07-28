@@ -38,8 +38,11 @@ public class Main {
         biblio.removeLivre(livre3);
         biblio.afficheAll();
 
+        System.out.println("##################### Emprunt du livre 5");
+        System.out.println(biblio.borrowBookByTitle("Titre 5"));
+        biblio.afficheAll();
 
-        System.out.println("##################### Suppression du livre 5");
+        System.out.println("##################### Suppression du livre 5 en utilisant Iterator");
         String deletedBook5 = "Titre 5";
 
         Iterator<Livre> iterator = biblio.iterator();
@@ -52,5 +55,9 @@ public class Main {
             }
         }
         biblio.afficheAll();
+
+        System.out.println(biblio.removeBookByTitle("Titre 1"));
+        biblio.afficheAll();
+
     }
 }

@@ -39,6 +39,25 @@ public class Bibliotheque {
             }
         }
 
+        public String borrowBookByTitle(String title){
+            for (int i = 0; i < livres.size() ; i++) {
+                if(livres.get(i).getTitle().equals(title)){
+                    livres.get(i).changeStatus();
+                    return "Vous venez d'emprunter le livre : "+ livres.get(i).getTitle();
+                }
+            }
+            return title+" n'est pas présent actuellement.";
+        }
+
+        public String removeBookByTitle(String title){
+            for (int i = 0; i < livres.size(); i++) {
+                if(livres.get(i).getTitle().equals(title)){
+                    livres.remove(i);
+                    return "Vous venez de supprimer le livre : "+ livres.get(i).getTitle();
+                }
+            }
+            return null;
+        }
 
         public Iterator<Livre> iterator() {
             return livres.iterator();
