@@ -39,6 +39,7 @@ public class Collection {
         System.out.println("3. Taille du sortedSert : "+ sortedSet.size());
         System.out.println("4. prend les élèments avant le head : " +sortedSet.headSet("JAvA"));
 
+        // Démo pour linkedList
         LinkedList<Double> linkedList = new LinkedList<>();
         linkedList.add(12.63);
         linkedList.add(15.25);
@@ -65,5 +66,27 @@ public class Collection {
 
         System.out.println("SortedMap "+ sortedMap);
 
+        //Méthodes pour le SortedMap
+        System.out.println("1. récupérer toutes les Key "+ sortedMap.keySet());
+        System.out.println("1. récupérer les valeurs "+ sortedMap.values());
+        System.out.println("1. récupérer la 1er Key "+ sortedMap.firstKey());
+        System.out.println("1. récupérer la dernière Key "+ sortedMap.lastKey());
+        sortedMap.remove("Java");
+        System.out.println(" SortedMap : " +sortedMap);
+
+        // Démo pour HashMap
+        HashMap<String, Integer> hashMap = new HashMap<>();
+        hashMap.put("Java",20);
+        hashMap.put("Python",10);
+        hashMap.put("C++",30);
+        System.out.println(" hashMap : "+hashMap);
+
+        // Méthodes pour le HashMap
+        System.out.println("1. Taille du HasMap : " +hashMap.size());
+        System.out.println("2. Valeur associé a la clé 'Java' : " +hashMap.get("Java"));
+        System.out.println("3. Verification si clé 'Banana' presente  : " +hashMap.containsKey("Banana"));
+        hashMap.remove("Python");
+        System.out.println("4. Suppression de l'entrée avec la clé Python");
+        System.out.println(" hasMap : "+hashMap);
     }
 }
