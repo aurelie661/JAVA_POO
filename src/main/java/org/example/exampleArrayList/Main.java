@@ -1,7 +1,6 @@
 package org.example.exampleArrayList;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,6 +20,23 @@ public class Main {
         // Une autre maniére plus simple pour parcourir une liste
         for(Fruit f:fruits){ // Pour chaque Fruit de la lste
             f.affiche(); // Faire appel à la méthode affiche() du Fruit f
+        }
+        Map<String, Fruit> fruitsMap=new HashMap<String, Fruit>();
+
+        System.out.println("###########################################");
+        fruitsMap.put("premier", new Pomme(3));
+
+        System.out.println("########1er affichage ###############");
+        Fruit f = fruitsMap.get("premier");
+        f.affiche();
+
+        System.out.println("############2 eme affichage##############");
+        Iterator<String> it=fruitsMap.keySet().iterator();
+        while(it.hasNext()){
+            String key=it.next();
+            Fruit ff=fruitsMap.get(key);
+            System.out.println(key);
+            ff.affiche();
         }
     }
 }
