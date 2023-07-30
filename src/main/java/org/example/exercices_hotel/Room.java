@@ -3,13 +3,13 @@ package org.example.exercices_hotel;
 public class Room {
     private  int roomNumber;
     private boolean isFree;
-    private int numberOfRooms;
+    private int numberOfBed;
     private double price;
 
-    public Room(int roomNumber, int numberOfRooms, double price) {
+    public Room(int roomNumber, int numberOfBed, double price) {
         this.roomNumber = roomNumber;
         this.isFree = false;
-        this.numberOfRooms = numberOfRooms;
+        this.numberOfBed = numberOfBed;
         this.price = price;
     }
 
@@ -29,12 +29,12 @@ public class Room {
         isFree = free;
     }
 
-    public int getNumberOfRooms() {
-        return numberOfRooms;
+    public int getNumberOfBed() {
+        return numberOfBed;
     }
 
-    public void setNumberOfRooms(int numberOfRooms) {
-        this.numberOfRooms = numberOfRooms;
+    public void setNumberOfBed(int numberOfBed) {
+        this.numberOfBed = numberOfBed;
     }
 
     public double getPrice() {
@@ -44,4 +44,16 @@ public class Room {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Room :" +
+                "room Number= " + roomNumber +
+                ", is Free= " + isFree +
+                ", number Of Bed= " + numberOfBed +
+                ", price= " + price +
+                "€\n";
+    }
+
+    //todo ajouter la méthode "changeStatus" de isFree
 }

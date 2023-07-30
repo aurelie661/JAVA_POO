@@ -44,4 +44,14 @@ public class Reservation {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
+    @Override
+    public String toString() {
+        return "id =" + id +
+                ", rooms =" + rooms +
+                ", customer =" + customer +
+                '.';
+    }
+
+//todo ajouter la méthode "changeStatus" de isConfirmed
 }

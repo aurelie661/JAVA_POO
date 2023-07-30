@@ -2,14 +2,12 @@ package org.example.exercices_hotel;
 
 public class Customer {
     private final int id;
-    private String lastName;
-    private String firstName;
+    private String fullName;
     private String phoneNumber;
 
-    public Customer(int id, String lastName, String firstName, String phoneNumber) {
+    public Customer(int id, String fullName, String phoneNumber) {
         this.id = id;
-        this.lastName = lastName;
-        this.firstName = firstName;
+        this.fullName = fullName;
         this.phoneNumber = phoneNumber;
     }
 
@@ -17,20 +15,12 @@ public class Customer {
         return id;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getFullName() {
+            return fullName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getPhoneNumber() {
@@ -41,13 +31,14 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
+
     @Override
     public String toString() {
-        return "Customer :" +
-                "id= " + id +
-                ", lastName= '" + lastName + '\'' +
-                ", firstName= '" + firstName + '\'' +
-                ", phoneNumber= '" + phoneNumber + '\'' +
-                '.';
+        return "id = " + id +
+                ", Name = " + fullName +
+                ", Phone Number = " + phoneNumber +
+                "\n";
     }
+
+
 }
