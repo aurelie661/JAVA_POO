@@ -31,7 +31,6 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-
     @Override
     public String toString() {
         return " id = " + id +
@@ -39,6 +38,4 @@ public class Customer {
                 ", Phone Number = " + phoneNumber +
                 "\n";
     }
-
-
 }
