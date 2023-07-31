@@ -34,7 +34,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "id = " + id +
+        return " id = " + id +
                 ", Name = " + fullName +
                 ", Phone Number = " + phoneNumber +
                 "\n";

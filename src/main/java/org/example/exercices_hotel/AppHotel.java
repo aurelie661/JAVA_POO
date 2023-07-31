@@ -70,41 +70,48 @@ public class AppHotel {
 
             switch (choice){
                 case 1:
+                    System.out.println("\t====== Ajouter un client ======");
                     System.out.println("Nom complet :");
                     customerFullName =scanner.nextLine();
                     System.out.println("Numéro de téléphone :");
                     customerPhoneNumber = scanner.nextLine();
-                    customers.add(new Customer(customers.size() + 1,customerFullName,customerPhoneNumber));
+                    hotel.addCustomer(customers.size() + 1,customerFullName,customerPhoneNumber);
                     System.out.println("\n\n\n");
                     break;
                 case 2:
                     System.out.println("\t====== Liste des Clients ======");
-                    for (Customer customer : customers) {
-                        System.out.println("\t"+customer.toString());
-                    }
+                    hotel.getCustomers();
                     System.out.println("\n\n\n");
                     break;
                 case 3:
+                    System.out.println("\t====== Afficher les réservations d'un client ======");
 
                     break;
                 case 4:
+                    System.out.println("\t====== Ajouter une réservation ======");
                     System.out.println("Identifiant client :");
                     customerId =scanner.nextInt();
                     System.out.println("Numéro de Chambre :");
                     numberOfRoom = scanner.nextInt();
                     reservedRoom.add(rooms.get(numberOfRoom - 1));
-                    reservations.add(new Reservation(reservations.size() +1, reservedRoom,customers.get(customerId - 1)));
-                    System.out.println("La chambre a été révervée avec succès.");
+                    hotel.addReservation(reservations.size() + 1, reservedRoom, customers.get(customerId - 1));
                     System.out.println("\n\n\n");
                     break;
                 case 5:
-
+                    System.out.println("\t====== Annuler une réservation ======");
+                    /*System.out.println("Identifiant client :");
+                    customerId =scanner.nextInt();*/
+                    System.out.println("Numéro de Chambre :");
+                    numberOfRoom = scanner.nextInt();
+                    for (int i = 0; i < reservations.size(); i++) {
+                        Reservation reservation = reservations.get(numberOfRoom);
+                        reservations.remove(reservation);
+                        System.out.println("La réservation a été annulée avec succès.");
+                        }
                     break;
                 case 6:
                     System.out.println("\t====== Liste des Réservations ======");
-                    for (Reservation reservation : reservations) {
-                        System.out.println("\t"+reservation.toString());
-                    }
+                    hotel.getReservations();
                     System.out.println("\n\n\n");
                     break;
                 default:

@@ -1,6 +1,5 @@
 package org.example.exercices_hotel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Reservation {
@@ -47,9 +46,9 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return "id =" + id +
-                ", rooms =" + rooms +
-                ", customer =" + customer +
+        return " id = " + id +
+                ", rooms = " + rooms +
+                ", customer = " + customer +
                 '.';
     }
 

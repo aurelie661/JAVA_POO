@@ -17,6 +17,9 @@ public class Hotel {
     }
 
     public List<Customer> getCustomers() {
+        for (Customer customer : customers) {
+            System.out.println("\t"+customer.toString());
+        }
         return customers;
     }
 
@@ -33,6 +36,9 @@ public class Hotel {
     }
 
     public List<Reservation> getReservations() {
+        for (Reservation reservation : reservations) {
+                System.out.println("\t"+reservation.toString());
+        }
         return reservations;
     }
 
@@ -44,4 +50,13 @@ public class Hotel {
         return name;
     }
 
+    public void addCustomer(int id, String fullName, String phoneNumber){
+         customers.add(new Customer(id,fullName,phoneNumber));
+        System.out.println("Client ajouté avec succès.");
+    }
+
+    public  void addReservation(int id,List<Room> rooms, Customer customer){
+        reservations.add(new Reservation(id,rooms,customer));
+        System.out.println("La chambre a été révervée avec succès.");
+    }
 }
