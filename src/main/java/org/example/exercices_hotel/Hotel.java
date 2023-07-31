@@ -51,12 +51,20 @@ public class Hotel {
     }
 
     public void addCustomer(int id, String fullName, String phoneNumber){
-         customers.add(new Customer(id,fullName,phoneNumber));
-        System.out.println("Client ajouté avec succès.");
+            customers.add(new Customer(id,fullName,phoneNumber));
+            System.out.println("Le client a été ajouté avec succès.");
     }
 
     public  void addReservation(int id,List<Room> rooms, Customer customer){
         reservations.add(new Reservation(id,rooms,customer));
         System.out.println("La chambre a été révervée avec succès.");
+    }
+
+    public void  removeReservation(int id){
+        for (int i = 0; i < reservations.size(); i++) {
+            Reservation reservation = reservations.get(id);
+            reservations.remove(reservation);// todo changeStatus
+            System.out.println("La réservation a été annulée avec succès.");
+        }
     }
 }

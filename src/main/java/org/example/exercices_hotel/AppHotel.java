@@ -101,11 +101,7 @@ public class AppHotel {
                     System.out.println("\t====== Annuler une réservation ======");
                     System.out.println("Numéro de Chambre :");
                     numberOfRoom = scanner.nextInt();
-                    for (int i = 0; i < reservations.size(); i++) {
-                        Reservation reservation = reservations.get(numberOfRoom);
-                        reservations.remove(reservation);// todo changeStatus
-                        System.out.println("La réservation a été annulée avec succès.");
-                        }
+                    hotel.removeReservation(numberOfRoom - 1);
                     break;
                 case 6:
                     System.out.println("\t====== Liste des Réservations ======");
