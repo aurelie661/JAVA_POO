@@ -8,7 +8,6 @@ public class Hotel {
     private List<Reservation> reservations;
     private String name;
 
-
     public Hotel(List<Customer> customers, List<Room> rooms, List<Reservation> reservations) {
         this.customers = customers;
         this.rooms = rooms;
@@ -57,7 +56,8 @@ public class Hotel {
 
     public  void addReservation(int id,List<Room> rooms, Customer customer){
         reservations.add(new Reservation(id,rooms,customer));
-        System.out.println("La chambre a été révervée avec succès.");
+
+        System.out.println("La chambre a été réservée avec succès.");
     }
 
     public void  removeReservation(int id){

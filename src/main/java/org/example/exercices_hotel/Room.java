@@ -53,6 +53,11 @@ public class Room {
                 ", price= " + price +
                 "€\n";
     }
-
-    //todo ajouter la méthode "changeStatus" de isFree
+    public void changeStatus(){
+        if(!isFree){
+            setFree(false);
+        }else{
+            setFree(true);
+        }
+    }
 }

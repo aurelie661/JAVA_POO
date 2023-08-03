@@ -52,5 +52,12 @@ public class Reservation {
                 '.';
     }
 
+    public void changeStatus(){
+        if(!isConfirmed){
+            setConfirmed(false);
+        }else{
+            setConfirmed(true);
+        }
+    }
 //todo ajouter la méthode "changeStatus" de isConfirmed
 }

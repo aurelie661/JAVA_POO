@@ -85,7 +85,9 @@ public class AppHotel {
                     break;
                 case 3:
                     System.out.println("\t====== Afficher les réservations d'un client ======");
-
+                    System.out.println("Identifiant client :");
+                    customerId =scanner.nextInt();
+                    //todo à finir
                     break;
                 case 4:
                     System.out.println("\t====== Ajouter une réservation ======");
