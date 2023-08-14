@@ -32,7 +32,6 @@ public class AppHotel {
         List<Customer> customers = new ArrayList<>();
         List<Room> rooms = new ArrayList<>();
         List<Reservation> reservations = new ArrayList<>();
-        List<Room> reservedRoom = new ArrayList<>();
         Hotel hotel = new Hotel(customers,rooms,reservations);
 
         //Generates a random number for creating guests and rooms
@@ -41,7 +40,7 @@ public class AppHotel {
 
         //Creation of customers
         for (int i = 0; i < randomNb; i++) {
-            customers.add(new Customer(i+1,PrintRandomFullName(),PrintRandomPhoneNumber()));
+            //customers.add(new Customer(i+1,PrintRandomFullName(),PrintRandomPhoneNumber()));
             System.out.println();
         }
         //Creation of rooms
@@ -75,7 +74,7 @@ public class AppHotel {
                     customerFullName =scanner.nextLine();
                     System.out.println("Numéro de téléphone :");
                     customerPhoneNumber = scanner.nextLine();
-                    hotel.addCustomer(customers.size() + 1,customerFullName,customerPhoneNumber);
+                    //hotel.addCustomer(customers.size() + 1,customerFullName,customerPhoneNumber);
                     System.out.println("\n\n\n");
                     break;
                 case 2:
@@ -96,8 +95,6 @@ public class AppHotel {
                         customerId =scanner.nextInt();
                         System.out.println("Numéro de Chambre :");
                         numberOfRoom = scanner.nextInt();
-
-                        /*reservedRoom.add(rooms.get(numberOfRoom - 1));*/
                         hotel.addReservation(reservations.size() + 1, rooms.get(numberOfRoom -1), customers.get(customerId - 1));
                         System.out.println("\n\n\n");
                         break;

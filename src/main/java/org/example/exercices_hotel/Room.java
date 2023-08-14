@@ -47,17 +47,17 @@ public class Room {
 
     @Override
     public String toString() {
-        return " Chambre n°" + roomNumber +
-                ", is Free= " + isFree +
+        return " Chambre n°" + roomNumber +", is Free= " + isFree +
                 ", number Of Bed= " + numberOfBed +
                 ", price= " + price +
-                "€\n";
+                "€";
     }
+
     public void changeStatus(){
         if(!isFree){
-            setFree(false);
-        }else{
             setFree(true);
+        }else{
+            setFree(false);
         }
     }
 }

@@ -1,7 +1,6 @@
 package org.example.exercices_hotel;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Hotel {
@@ -10,16 +9,19 @@ public class Hotel {
     private List<Reservation> reservations;
     private String name;
 
+    public Hotel(String name) {
+        this.name = name;
+    }
+
     public Hotel(List<Customer> customers, List<Room> rooms, List<Reservation> reservations) {
         this.customers = customers;
         this.rooms = rooms;
         this.reservations = reservations;
-        this.name = "Hotel California";
     }
 
     public List<Customer> getCustomers() {
         for (Customer customer : customers) {
-            System.out.println("\t"+customer.toString());
+            System.out.println("\t"+customer);
         }
         return customers;
     }
@@ -56,8 +58,8 @@ public class Hotel {
         return name;
     }
 
-    public void addCustomer(int id, String fullName, String phoneNumber){
-            customers.add(new Customer(id,fullName,phoneNumber));
+    public void addCustomer(String firstName, String LastName, String phoneNumber){
+            customers.add(new Customer(firstName,LastName,phoneNumber));
             System.out.println("Le client a été ajouté avec succès.");
     }
 
@@ -65,6 +67,7 @@ public class Hotel {
         List<Room> roomReserved = new ArrayList<>();
         roomReserved.add(room);
         reservations.add(new Reservation(id,roomReserved,customer));
+        room.changeStatus();
 
         System.out.println("La chambre a été réservée avec succès.");
     }

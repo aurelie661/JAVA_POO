@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Reservation {
 
-    private int id;
+    private final int id;
     private boolean isConfirmed;
     private List<Room> rooms;
     private Customer customer;
@@ -46,7 +46,7 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return "La chambre";
+        return rooms + " a été réservé par "+customer.affiche();
     }
 
     public void changeStatus(){
@@ -56,5 +56,4 @@ public class Reservation {
             setConfirmed(true);
         }
     }
-//todo ajouter la méthode "changeStatus" de isConfirmed
 }
