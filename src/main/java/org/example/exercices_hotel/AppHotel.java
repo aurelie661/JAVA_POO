@@ -46,7 +46,7 @@ public class AppHotel {
         }
         //Creation of rooms
         for (int i = 0; i < randomNb; i++) {
-            rooms.add(new Room(i+1, (int) (Math.random() * 7),randomNb * 19));
+            rooms.add(new Room(i+1, (int) (Math.random() * 10) ,randomNb * 19));
             System.out.println();
         }
 
@@ -90,20 +90,26 @@ public class AppHotel {
                     //todo à finir
                     break;
                 case 4:
-                    System.out.println("\t====== Ajouter une réservation ======");
-                    System.out.println("Identifiant client :");
-                    customerId =scanner.nextInt();
-                    System.out.println("Numéro de Chambre :");
-                    numberOfRoom = scanner.nextInt();
-                    reservedRoom.add(rooms.get(numberOfRoom - 1));
-                    hotel.addReservation(reservations.size() + 1, reservedRoom, customers.get(customerId - 1));
-                    System.out.println("\n\n\n");// todo changeStatus
+                    try{
+                        System.out.println("\t====== Ajouter une réservation ======");
+                        System.out.println("Identifiant client :");
+                        customerId =scanner.nextInt();
+                        System.out.println("Numéro de Chambre :");
+                        numberOfRoom = scanner.nextInt();
+
+                        /*reservedRoom.add(rooms.get(numberOfRoom - 1));*/
+                        hotel.addReservation(reservations.size() + 1, rooms.get(numberOfRoom -1), customers.get(customerId - 1));
+                        System.out.println("\n\n\n");
+                        break;
+                    }catch (InputMismatchException e){
+                        System.out.println("Erreur d'identification du client !");
+                    }
                     break;
                 case 5:
                     System.out.println("\t====== Annuler une réservation ======");
                     System.out.println("Numéro de Chambre :");
                     numberOfRoom = scanner.nextInt();
-                    hotel.removeReservation(numberOfRoom - 1);
+                    hotel.removeReservation(numberOfRoom - 1); //todo à finir
                     break;
                 case 6:
                     System.out.println("\t====== Liste des Réservations ======");

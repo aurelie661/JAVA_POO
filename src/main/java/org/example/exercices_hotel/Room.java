@@ -8,7 +8,7 @@ public class Room {
 
     public Room(int roomNumber, int numberOfBed, double price) {
         this.roomNumber = roomNumber;
-        this.isFree = false;
+        this.isFree = true;
         this.numberOfBed = numberOfBed;
         this.price = price;
     }
@@ -47,7 +47,7 @@ public class Room {
 
     @Override
     public String toString() {
-        return " room Number= " + roomNumber +
+        return " Chambre n°" + roomNumber +
                 ", is Free= " + isFree +
                 ", number Of Bed= " + numberOfBed +
                 ", price= " + price +

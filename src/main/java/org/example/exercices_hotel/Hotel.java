@@ -1,5 +1,7 @@
 package org.example.exercices_hotel;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Hotel {
@@ -35,10 +37,15 @@ public class Hotel {
     }
 
     public List<Reservation> getReservations() {
-        for (Reservation reservation : reservations) {
-                System.out.println("\t"+reservation.toString());
+        if(!reservations.isEmpty()){
+            for (Reservation reservation : reservations) {
+                System.out.println("\t"+reservation);
+            }
+            return reservations;
+        }else{
+            System.out.println("\tAucune réservation actuellement!");
+            return null;
         }
-        return reservations;
     }
 
     public void setReservations(List<Reservation> reservations) {
@@ -54,8 +61,10 @@ public class Hotel {
             System.out.println("Le client a été ajouté avec succès.");
     }
 
-    public  void addReservation(int id,List<Room> rooms, Customer customer){
-        reservations.add(new Reservation(id,rooms,customer));
+    public  void addReservation(int id,Room room, Customer customer){
+        List<Room> roomReserved = new ArrayList<>();
+        roomReserved.add(room);
+        reservations.add(new Reservation(id,roomReserved,customer));
 
         System.out.println("La chambre a été réservée avec succès.");
     }

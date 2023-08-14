@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Reservation {
 
-    private final int id;
+    private int id;
     private boolean isConfirmed;
     private List<Room> rooms;
     private Customer customer;
@@ -46,10 +46,7 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return " id = " + id +
-                ", rooms = " + rooms +
-                ", customer = " + customer +
-                '.';
+        return "La chambre";
     }
 
     public void changeStatus(){
