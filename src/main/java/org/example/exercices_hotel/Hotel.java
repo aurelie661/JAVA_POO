@@ -23,10 +23,6 @@ public class Hotel {
         return customers;
     }
 
-    public void setCustomers(List<Customer> customers) {
-        this.customers = customers;
-    }
-
     public List<Room> getRooms() {
         return rooms;
     }
@@ -60,6 +56,19 @@ public class Hotel {
             System.out.println("Le client a été ajouté avec succès.");
     }
 
+    public void showReservationsOfCustomer(int idCustomer){
+            if(!reservations.isEmpty()){
+                for (Reservation reservation: reservations) {
+                    if (reservation.getCustomer().getId() == idCustomer) {
+                        System.out.println(reservation);
+                    }
+                }
+            }else{
+                System.out.println("\tAucune réservation pour ce client actuellement.");
+            }
+
+        }
+
     public  void addReservation(Room room, Customer customer){
         List<Room> roomReserved = new ArrayList<>();
         roomReserved.add(room);
@@ -81,7 +90,7 @@ public class Hotel {
                     }
                 }
             }
-        }
+        }//todo à finir (Mauvaise suppression) + changeStatut
 
         if (reservationToRemove != null) {
             reservations.remove(reservationToRemove);

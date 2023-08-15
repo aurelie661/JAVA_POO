@@ -112,8 +112,9 @@ public class IhmConsole {
         System.out.println("\t====== Afficher les réservations d'un client ======");
         System.out.println("\n");
         System.out.println("Identifiant client :");
-        int customerId =scanner.nextInt();
-        System.out.println("\n\n");//todo à finir
+        int customerId = scanner.nextInt();
+        hotel.showReservationsOfCustomer(customerId);
+        System.out.println("\n\n");
     }
     public static void AddReservation(){
         System.out.println("\t====== Ajouter une réservation ======");
@@ -122,7 +123,7 @@ public class IhmConsole {
         int customerId =scanner.nextInt();
         System.out.println("Numéro de Chambre :");
         int numberOfRoom = scanner.nextInt();
-        hotel.addReservation(rooms.get(numberOfRoom -1), customers.get(customerId - 1));
+        hotel.addReservation(rooms.get(numberOfRoom - 1), customers.get(customerId - 1));
         System.out.println("\n\n");
     }
     public static void DeleteReservation(){
