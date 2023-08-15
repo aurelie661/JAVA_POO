@@ -13,47 +13,17 @@ public class Room {
         this.numberOfBed = numberOfBed;
         this.price = price;
     }
-
-    public int getRoomNumber() {
-        return roomNumber;
-    }
-
-    public void setRoomNumber(int roomNumber) {
-        this.roomNumber = roomNumber;
-    }
-
-    public boolean isFree() {
-        return isFree;
-    }
-
     public void setFree(boolean free) {
         isFree = free;
     }
-
-    public int getNumberOfBed() {
-        return numberOfBed;
-    }
-
-    public void setNumberOfBed(int numberOfBed) {
-        this.numberOfBed = numberOfBed;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     @Override
     public String toString() {
-        return " Chambre n°" + roomNumber +", is Free= " + isFree +
-                ", number Of Bed= " + numberOfBed +
-                ", price= " + price +
-                "€";
+        return  " Chambre n°"+
+                roomNumber+" est actuellement libre => "+
+                isFree+" il y a "+
+                numberOfBed+" lit(s)"+ " sont prix est de "+
+                price+" €\n";
     }
-
     public void changeStatus(){
         if(!isFree){
             setFree(true);

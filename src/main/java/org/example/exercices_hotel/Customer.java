@@ -14,35 +14,9 @@ public class Customer {
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
     }
-
     public int getId() {
         return id;
     }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
     @Override
     public String toString() {
         return id +") "+
@@ -50,8 +24,7 @@ public class Customer {
                 ", Phone Number = " + phoneNumber +
                 "\n";
     }
-
-    public String affiche(){
+    public String show(){
         return id+" => "+firstName +" "+lastName;
     }
 }

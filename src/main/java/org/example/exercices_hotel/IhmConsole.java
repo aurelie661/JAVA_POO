@@ -14,11 +14,18 @@ public class IhmConsole {
     public static void StartIhm(){
         System.out.println("Quel est le nom de votre hotel :");
         String hotelName = scanner.nextLine();
-
         GenerateData();
+        hotel = new Hotel(customers,rooms,reservations,hotelName);
+        System.out.println("\t\t\nHotel "+hotel.getName()+ " crée avec succés !\n");
+        System.out.println(rooms);
+        ShowMenu();
+    }
+    public static void GenerateData(){
+        PrintRandomFirstName();
+        PrintRandomLastName();
+        PrintRandomPhoneNumber();
         double doubleRandomNb = Math.random() * 15 + 1;
         int randomNb = (int) doubleRandomNb;
-
         //Creation of customers
         for (int i = 0; i < randomNb; i++) {
             customers.add(new Customer(PrintRandomFirstName(),PrintRandomLastName(),PrintRandomPhoneNumber()));
@@ -29,29 +36,20 @@ public class IhmConsole {
             rooms.add(new Room((int) (Math.random() * 10) ,randomNb * 19));
             System.out.println();
         }
-
-        hotel = new Hotel(customers,rooms,reservations,hotelName);
-        System.out.println("\t\t\nHotel "+hotel.getName()+ " crée avec succés !\n");
-        ShowMenu();
-    }
-    public static void GenerateData(){
-        PrintRandomFirstName();
-        PrintRandomLastName();
-        PrintRandomPhoneNumber();
     }
     public static void ShowMenu(){
         int choice;
         do {
             System.out.printf("\t\tBienvenue à l'hotel %s\n", hotel.getName());
             System.out.println("================ Menu Principal ================");
-            System.out.println("1. Ajouter un client");
-            System.out.println("2. Afficher la liste des clients");
-            System.out.println("3. Afficher les réservations d'un client");
-            System.out.println("4. Ajouter une réservation");
-            System.out.println("5. Annuler une réservation");
-            System.out.println("6. Afficher la liste des réservations");
-            System.out.println("0. Quitter");
-            System.out.print("Votre choix : ");
+            System.out.println("\t\t1. Ajouter un client");
+            System.out.println("\t\t2. Afficher la liste des clients");
+            System.out.println("\t\t3. Afficher les réservations d'un client");
+            System.out.println("\t\t4. Ajouter une réservation");
+            System.out.println("\t\t5. Annuler une réservation");
+            System.out.println("\t\t6. Afficher la liste des réservations");
+            System.out.println("\t\t0. Quitter");
+            System.out.print("\t\tVotre choix : ");
             choice = scanner.nextInt();
             scanner.nextLine();
             System.out.println();
