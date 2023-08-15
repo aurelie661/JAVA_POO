@@ -25,7 +25,7 @@ public class Reservation {
     }
     @Override
     public String toString() {
-        return rooms + " a été réservé par "+customer.show();
+        return rooms + "\t a été réservé par "+customer.show()+"\n";
     }
     public void changeStatus(){
         if(!isConfirmed){

@@ -16,6 +16,13 @@ public class Room {
     public void setFree(boolean free) {
         isFree = free;
     }
+    public void changeStatus(){
+        if(!isFree){
+            setFree(true);
+        }else{
+            setFree(false);
+        }
+    }
     @Override
     public String toString() {
         return  " Chambre n°"+
@@ -23,12 +30,5 @@ public class Room {
                 isFree+" il y a "+
                 numberOfBed+" lit(s)"+ " sont prix est de "+
                 price+" €\n";
-    }
-    public void changeStatus(){
-        if(!isFree){
-            setFree(true);
-        }else{
-            setFree(false);
-        }
     }
 }

@@ -109,7 +109,7 @@ public class IhmConsole {
         int customerId =scanner.nextInt();
         System.out.println("Numéro de Chambre :");
         int numberOfRoom = scanner.nextInt();
-        hotel.removeReservation(customerId,numberOfRoom);
+        hotel.removeReservation(customerId - 1,numberOfRoom - 1);
         System.out.println("\n\n");//todo à finir (mauvaise suppression)
     }
     public static void ShowAllReservations(){
