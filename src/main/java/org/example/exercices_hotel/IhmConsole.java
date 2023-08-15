@@ -34,13 +34,11 @@ public class IhmConsole {
         System.out.println("\t\t\nHotel "+hotel.getName()+ " crée avec succés !\n");
         ShowMenu();
     }
-
     public static void GenerateData(){
         PrintRandomFirstName();
         PrintRandomLastName();
         PrintRandomPhoneNumber();
     }
-
     public static void ShowMenu(){
         int choice;
         do {
@@ -58,36 +56,18 @@ public class IhmConsole {
             scanner.nextLine();
             System.out.println();
 
-
             switch(choice){
-                case 1:
-                    AddCustomer();
-                    break;
-                case 2:
-                    ShowCustomers();
-                    break;
-                case 3:
-                    ShowReservationsOfCustomer();
-                    break;
-                case 4:
-                    AddReservation();
-                    break;
-                case 5:
-                    DeleteReservation();
-                    break;
-                case 6:
-                    ShowAllReservations();
-                    break;
-                case 0:
-                    System.out.println("Merci, Aurevoir!");
-                    break;
-                default:
-                    System.out.println("Saisie invalible ! ( Saisir un chiffre entre 1 et 6 )");
-                    break;
+                case 1 -> AddCustomer();
+                case 2 -> ShowCustomers();
+                case 3 -> ShowReservationsOfCustomer();
+                case 4 -> AddReservation();
+                case 5 -> DeleteReservation();
+                case 6 -> ShowAllReservations();
+                case 0 -> System.out.println("Merci, Aurevoir!");
+                default -> System.out.println("Saisie invalible ! ( Saisir un chiffre entre 1 et 6 )");
             }
         }while (choice != 0);
     }
-
     public static void AddCustomer(){
         System.out.println("\t====== Ajouter un client ======");
         System.out.println("\n");
@@ -100,14 +80,12 @@ public class IhmConsole {
         hotel.addCustomer(customerFirstName,customerLastName,customerPhoneNumber);
         System.out.println("\n\n");
     }
-
     public static void ShowCustomers(){
         System.out.println("\t====== Liste des Clients ======");
         System.out.println("\n");
         hotel.getCustomers();
         System.out.println("\n\n");
     }
-
     public static void ShowReservationsOfCustomer(){
         System.out.println("\t====== Afficher les réservations d'un client ======");
         System.out.println("\n");
