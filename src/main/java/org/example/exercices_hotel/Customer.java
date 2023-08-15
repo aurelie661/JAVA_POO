@@ -6,7 +6,7 @@ public class Customer {
     private String lastName;
     private String phoneNumber;
 
-    private static int countCustomer = 0;
+    private static int countCustomer = 1;
 
     public Customer(String firstName, String lastName, String phoneNumber) {
         this.id = countCustomer++;
@@ -46,7 +46,7 @@ public class Customer {
     @Override
     public String toString() {
         return id +") "+
-                ", Name = " + firstName +" "+lastName+
+                " Name = " + firstName +" "+lastName+
                 ", Phone Number = " + phoneNumber +
                 "\n";
     }

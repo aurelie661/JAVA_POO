@@ -1,5 +1,4 @@
 package org.example.exercices_hotel;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,16 +8,14 @@ public class Hotel {
     private List<Reservation> reservations;
     private String name;
 
-    public Hotel(String name) {
-        this.name = name;
-    }
-
-    public Hotel(List<Customer> customers, List<Room> rooms, List<Reservation> reservations) {
+    public Hotel(List<Customer> customers, List<Room> rooms, List<Reservation> reservations, String name) {
         this.customers = customers;
         this.rooms = rooms;
         this.reservations = reservations;
+        this.name = name;
     }
 
+    public Hotel(){}
     public List<Customer> getCustomers() {
         for (Customer customer : customers) {
             System.out.println("\t"+customer);
@@ -63,20 +60,34 @@ public class Hotel {
             System.out.println("Le client a été ajouté avec succès.");
     }
 
-    public  void addReservation(int id,Room room, Customer customer){
+    public  void addReservation(Room room, Customer customer){
         List<Room> roomReserved = new ArrayList<>();
         roomReserved.add(room);
-        reservations.add(new Reservation(id,roomReserved,customer));
+        reservations.add(new Reservation(roomReserved,customer));
         room.changeStatus();
-
         System.out.println("La chambre a été réservée avec succès.");
     }
 
-    public void  removeReservation(int id){
-        for (int i = 0; i < reservations.size(); i++) {
-            Reservation reservation = reservations.get(id);
-            reservations.remove(reservation);// todo changeStatus
+    public void  removeReservation(int idCustomer,int idRoom){
+        Reservation reservationToRemove = null;
+        Customer customerFound;
+        for (Customer customer: customers) {
+            if(customer.getId() == idCustomer){
+                customerFound = customer;
+                for (Reservation reservation : reservations) {
+                    if (customerFound.getId() == idCustomer && reservation.getId() == idRoom) {
+                        reservationToRemove = reservation;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (reservationToRemove != null) {
+            reservations.remove(reservationToRemove);
             System.out.println("La réservation a été annulée avec succès.");
+        } else {
+            System.out.println("Aucune réservation correspondante trouvée.");
         }
     }
 }

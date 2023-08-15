@@ -5,9 +5,10 @@ public class Room {
     private boolean isFree;
     private int numberOfBed;
     private double price;
+    private static int countCustomer = 1;
 
-    public Room(int roomNumber, int numberOfBed, double price) {
-        this.roomNumber = roomNumber;
+    public Room( int numberOfBed, double price) {
+        this.roomNumber = countCustomer++;
         this.isFree = true;
         this.numberOfBed = numberOfBed;
         this.price = price;

@@ -8,9 +8,10 @@ public class Reservation {
     private boolean isConfirmed;
     private List<Room> rooms;
     private Customer customer;
+    private static int countCustomer = 1;
 
-    public Reservation(int id, List<Room> rooms, Customer customer) {
-        this.id = id;
+    public Reservation(List<Room> rooms, Customer customer) {
+        this.id = countCustomer++;
         this.isConfirmed = false;
         this.rooms = rooms;
         this.customer = customer;
